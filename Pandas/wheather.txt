@@ -1,0 +1,26 @@
+const axios = require("axios");
+
+const options = {
+  method: 'GET',
+  url: 'https://community-open-weather-map.p.rapidapi.com/weather',
+  params: {
+    q: 'London,uk',
+    lat: '0',
+    lon: '0',
+    callback: 'test',
+    id: '2172797',
+    lang: 'null',
+    units: 'imperial',
+    mode: 'xml'
+  },
+  headers: {
+    'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com',
+    'X-RapidAPI-Key': 'aa90f9069dmsh77129c141cac057p10e255jsn3b7b6110ee58'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});

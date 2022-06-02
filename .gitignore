@@ -1,2 +1,8 @@
 /Pandas/csv
 /Numpy/saved-data.npy 
+*.mp4
+*.jpg
+*.jpeg
+*.png
+*.mkv
+*.mp3
