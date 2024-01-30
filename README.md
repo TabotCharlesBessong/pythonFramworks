@@ -1,2 +1,7 @@
 ## Learning different platform and libraries in python 
-### Scikitlearn 
+### Scikitlearn
+### Pandas
+### Numpy
+### Seaborn
+### Kiyv
+### TKinter
