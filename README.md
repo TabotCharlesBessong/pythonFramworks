@@ -7,3 +7,5 @@
 ### TKinter
 ### Flask
 ### FastApi
+### Scrapy
+### Pytorch
