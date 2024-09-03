@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asia Tours</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
   </head>
   <body>
     <h1>Asia Tours Schedule for June 2024</h1>
@@ -12,5 +14,13 @@
       <li>{{tour}}</li>
       {% endfor %}
     </ul>
+    {% comment %} <img src="{% static 'images/logo.png' %}" /> {% endcomment %}
+    <div class="centered-content">
+      <img class="logo" src="{% static 'images/logo.png' %}" alt="logo" />
+      <form action="{% url 'contact' %}" method="get">
+        <button type="submit" class="btn">Click to Enter Form</button>
+      </form>
+    </div>
+    <script src="{% static 'js/script.js' %}" defer></script>
   </body>
 </html>
