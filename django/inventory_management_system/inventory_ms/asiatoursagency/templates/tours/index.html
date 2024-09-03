@@ -14,7 +14,13 @@
       <li>{{tour}}</li>
       {% endfor %}
     </ul>
-    <img src="{% static 'images/dlogo.png' %}" />
-    <script src="{% static 'js/srcipt.js' %}" ></script>
+    {% comment %} <img src="{% static 'images/logo.png' %}" /> {% endcomment %}
+    <div class="centered-content">
+      <img class="logo" src="{% static 'images/logo.png' %}" alt="logo" />
+      <form action="{% url 'contact' %}" method="get">
+        <button type="submit" class="btn">Click to Enter Form</button>
+      </form>
+    </div>
+    <script src="{% static 'js/script.js' %}" defer></script>
   </body>
 </html>
