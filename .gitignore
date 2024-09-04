@@ -3,6 +3,6 @@
 *.mp4
 *.jpg
 *.jpeg
-*.png
+# *.png
 *.mkv
 *.mp3
