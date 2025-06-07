@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Subjects Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Subjects Offered by {{ student }}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Subject</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for subject in subjects %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ subject }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{{ url_for('subjects') }}" class="back-link">Back</a>
+    </div>
+  </body>
+</html>
