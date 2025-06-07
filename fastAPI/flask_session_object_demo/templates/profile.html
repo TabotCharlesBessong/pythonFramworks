@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h2>{{ username }}'s Profile</h2>
+<img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile" class="page-img">
+<p>Username: <strong>{{ username }}</strong></p>
+<p>Email: <em>Not set</em></p>
+{% endblock %}

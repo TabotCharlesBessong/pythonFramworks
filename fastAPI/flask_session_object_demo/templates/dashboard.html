@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Welcome, {{ username }}!</h2>
+<img src="{{ url_for('static', filename='images/dashboard.png') }}" alt="Dashboard" class="page-img">
+<p>This is your dashboard. Use the navigation bar to explore your profile and subjects.</p>
+{% endblock %}
