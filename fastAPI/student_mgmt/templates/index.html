@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<h2>Welcome to the Student Management System</h2>
+<p>
+  {% if current_user.is_authenticated %} Go to your
+  <a href="{{ url_for('dashboard') }}">dashboard</a>. {% else %}
+  <a href="{{ url_for('login') }}">Login</a> or
+  <a href="{{ url_for('register') }}">Register</a> to get started. {% endif %}
+</p>
+<img
+  src="{{ url_for('static', filename='images/school.png') }}"
+  alt="School"
+  class="main-img"
+/>
+{% endblock %}
