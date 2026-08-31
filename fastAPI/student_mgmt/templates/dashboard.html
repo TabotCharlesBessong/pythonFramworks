@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Dashboard{% endblock %} {% block
+content %}
+<h2>Dashboard</h2>
+{% if profile %}
+<p>Welcome, {{ profile.full_name }}!</p>
+<img
+  src="{{ url_for('static', filename='images/male.png') }}"
+  alt="Student"
+  class="main-img"
+/>
+<p>Age: {{ profile.age }}</p>
+<a href="{{ url_for('student_profile') }}" class="btn">Edit Profile</a>
+{% else %}
+<p>You have not completed your profile yet.</p>
+<a href="{{ url_for('student_profile') }}" class="btn">Complete Profile</a>
+{% endif %} {% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %}Subjects{% endblock %} {% block
+content %}
+<h2>Choose Your Subjects</h2>
+<img
+  src="{{ url_for('static', filename='images/subjects.png') }}"
+  alt="Subjects"
+  class="page-img"
+/>
+<form method="POST">
+  <div class="checkbox-group">
+    <label
+      ><input type="checkbox" name="subjects" value="Mathematics" {% if
+      'Mathematics' in selected_subjects %}checked{% endif %}>
+      Mathematics</label
+    >
+    <label
+      ><input type="checkbox" name="subjects" value="English" {% if 'English' in
+      selected_subjects %}checked{% endif %}> English</label
+    >
+    <label
+      ><input type="checkbox" name="subjects" value="Biology" {% if 'Biology' in
+      selected_subjects %}checked{% endif %}> Biology</label
+    >
+    <label
+      ><input type="checkbox" name="subjects" value="Chemistry" {% if
+      'Chemistry' in selected_subjects %}checked{% endif %}> Chemistry</label
+    >
+    <label
+      ><input type="checkbox" name="subjects" value="Physics" {% if 'Physics' in
+      selected_subjects %}checked{% endif %}> Physics</label
+    >
+  </div>
+  <button type="submit">Save Subjects</button>
+</form>
+{% if selected_subjects %}
+<h3>Your Subjects:</h3>
+<ul>
+  {% for subject in selected_subjects %}
+  <li>{{ subject }}</li>
+  {% endfor %}
+</ul>
+{% endif %} {% endblock %}
