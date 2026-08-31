@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      {% if username %}
+      <h2>Welcome, {{ username }}!</h2>
+      <a href="{{ url_for('logout') }}" class="logout-link">Logout</a>
+      {% else %}
+      <h2>Welcome, Guest!</h2>
+      <a href="{{ url_for('login') }}" class="login-link">Login</a>
+      {% endif %}
+    </div>
+  </body>
+</html>
