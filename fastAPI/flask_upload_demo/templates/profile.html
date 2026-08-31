@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock %} {% block
+content %}
+<h2>{{ username }}'s Profile</h2>
+<div class="profile-section">
+  <div class="avatar-container">
+    <img
+      src="{{ url_for('static', filename='uploads/' + profile_pic) if profile_pic != 'default_avatar.png' else url_for('static', filename='images/default_avatar.png') }}"
+      class="avatar"
+      alt="Profile Picture"
+    />
+    {% if verified %}
+    <img
+      src="{{ url_for('static', filename='images/checkmark.png') }}"
+      class="checkmark"
+      alt="Verified"
+    />
+    {% endif %}
+  </div>
+  <form method="POST" enctype="multipart/form-data" class="upload-form">
+    <div>
+      <label>Upload Profile Picture:</label>
+      <input type="file" name="profile_pic" accept="image/*" />
+    </div>
+    <div>
+      <label>Upload Document (ID card, image or PDF):</label>
+      <input type="file" name="document" accept="image/*,application/pdf" />
+    </div>
+    <button type="submit">Update Profile</button>
+  </form>
+  {% if document %}
+  <p>
+    Document:
+    <a href="{{ url_for('uploaded_file', filename=document) }}" target="_blank"
+      >View</a
+    >
+  </p>
+  {% endif %}
+</div>
+{% endblock %}
